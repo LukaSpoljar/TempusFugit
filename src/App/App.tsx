@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
 import './App.scss';
 
 function App() {
@@ -34,16 +34,20 @@ function App() {
     async function fetchQuote() {
       try {
         //GET https://api.quotable.io/quotes - check how many quotes there are.
-        const res = await fetch("https://api.quotable.io/random");
+        const res = await fetch("https://zenquotes.io/api/random");
         const data = await res.json();
-
-        setAuthor(data.author);
-        setQuote(data.content);
+        console.dir(data)
+        setAuthor(data);
+        //setAuthor(data.author);
+        //setQuote(data.content);
       } catch (error) {
         console.log(error)
       }
     }
-    fetchQuote();
+
+    setTimeout(()=>{
+      fetchQuote();
+    }, 1000)
   }, []);
 
   return (
