@@ -8,6 +8,13 @@ function App() {
   const [quote, setQuote] = useState('');
   const [author, setAuthor] = useState('');
 
+  /* Saving last loaded quote into local storage*/
+  const saveQuote = (data: any) => {
+    localStorage.setItem('quote', JSON.stringify(data));
+    setAuthor(data.author);
+    setQuote(data.quote);
+  }
+
   /* Get and set current time in string format hh:mm:ss */
   const currentTime = () => {
     let dateNow: Date = new Date(Date.now());
@@ -40,21 +47,21 @@ function App() {
     currentTime();
     setInterval(currentTime, 1000);
 
-    fetchQuote().then(data => {
-      setAuthor(data.author);
-      setQuote(data.quote);
-    });
-
+    let savedData: any = localStorage.getItem('quote');
+    if (savedData) {
+      savedData = JSON.parse(savedData);
+      setAuthor(savedData.author);
+      setQuote(savedData.quote);
+    } else {
+      fetchQuote().then(data => saveQuote(data));
+    }
   }, []);
 
   return (
     <div id='app-wrapper'>
       <div id='time-wrapper'>
         <p id='time' className='glow-text'>{timeToDisplay}</p>
-        <Button variant="contained" size="large" onClick={(event: any) => fetchQuote().then(data => {
-          setAuthor(data.author);
-          setQuote(data.quote);
-        })}>
+        <Button variant="contained" size="large" onClick={(event: any) => fetchQuote().then(data => saveQuote(data))}>
           <strong>Next quote</strong>
         </Button>
       </div>
@@ -65,8 +72,6 @@ function App() {
           <p id='quote-author'>{author}</p>
         </div>
       </div>
-
-
     </div>
   );
 }
