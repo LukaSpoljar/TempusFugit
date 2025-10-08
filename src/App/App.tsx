@@ -8,13 +8,6 @@ function App() {
   const [quote, setQuote] = useState('');
   const [author, setAuthor] = useState('');
 
-  /* Saving last loaded quote into local storage*/
-  const saveQuote = (data: any) => {
-    localStorage.setItem('quote', JSON.stringify(data));
-    setAuthor(data.author);
-    setQuote(data.quote);
-  }
-
   /* Get and set current time in string format hh:mm:ss */
   const currentTime = () => {
     let dateNow: Date = new Date(Date.now());
@@ -40,6 +33,13 @@ function App() {
     } catch (error) {
       console.log(error)
     }
+  }
+
+  /* Saving last loaded quote into local storage*/
+  const saveQuote = (data: any) => {
+    localStorage.setItem('quote', JSON.stringify(data));
+    setAuthor(data.author);
+    setQuote(data.quote);
   }
 
   useEffect(() => {
