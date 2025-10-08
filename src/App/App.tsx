@@ -51,7 +51,7 @@ function App() {
     <div id='app-wrapper'>
       <div id='time-wrapper'>
         <p id='time' className='glow-text'>{timeToDisplay}</p>
-        <Button variant="contained" onClick={(event: any) => fetchQuote().then(data => {
+        <Button variant="contained" size="large" onClick={(event: any) => fetchQuote().then(data => {
           setAuthor(data.author);
           setQuote(data.quote);
         })}>
