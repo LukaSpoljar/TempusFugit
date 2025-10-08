@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/TempusFugit/static/css/main.616f35b5.css",
+    "main.js": "/TempusFugit/static/js/main.b2b6694a.js",
+    "index.html": "/TempusFugit/index.html",
+    "main.616f35b5.css.map": "/TempusFugit/static/css/main.616f35b5.css.map",
+    "main.b2b6694a.js.map": "/TempusFugit/static/js/main.b2b6694a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.616f35b5.css",
+    "static/js/main.b2b6694a.js"
+  ]
+}
