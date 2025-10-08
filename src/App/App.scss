@@ -1,0 +1,112 @@
+::selection {
+    background: #ffcc00;
+    color: #000;
+}
+
+#app-wrapper {
+    color: white;
+    background-color: black;
+    height: 100%;
+
+    font-size: 2rem;
+
+    display: flex;
+
+    @media screen and (orientation: landscape) {
+        flex-direction: row;
+    }
+
+    @media screen and (orientation: portrait) {
+        flex-direction: column;
+    }
+
+    .glow-text {
+        font-size: 5.5rem;
+        color: #fff;
+        text-align: center;
+        animation: glow 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+        from {
+            text-shadow:
+                0 0 5px #fff,
+                0 0 10px #008b8b,
+                0 0 15px #008b8b,
+                0 0 20px #008b8b;
+        }
+        to {
+            text-shadow:
+                0 0 10px #fff,
+                0 0 20px #008b8b,
+                0 0 30px #008b8b,
+                0 0 40px #008b8b;
+        }
+    }
+
+    button {
+        background-color: #008b8b;
+        align-self: center;
+    }
+
+    #time-wrapper {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+
+        background-color: black;
+
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+
+        overflow: auto;
+
+        #time {
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+            user-select: none;
+        }
+    }
+
+    #quote-wrapper {
+        width: 100%;
+        height: 100%;
+
+        background-color: #008b8b;
+
+        display: flex;
+        justify-content: center;
+
+        #quote-card {
+            width: 100%;
+            height: 100%;
+
+            overflow: auto;
+            max-width: 20cm;
+
+            display: flex;
+            justify-content: center;
+
+            flex-direction: column;
+
+            #quote,
+            #quote-author {
+                padding: 1em;
+            }
+
+            #quote {
+                text-align: start;
+                font-style: italic;
+                overflow: auto;
+            }
+            #quote-author {
+                text-align: end;
+            }
+        }
+    }
+}
