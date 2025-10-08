@@ -7,11 +7,10 @@ function App() {
   const [quote, setQuote] = useState('');
   const [author, setAuthor] = useState('');
 
-
   useEffect(() => {
 
-    /* Display time */
-    const displayTimeNow = () => {
+    /* Get and set current time in string format hh:mm:ss */
+    const currentTime = () => {
       let dateNow: Date = new Date(Date.now());
 
       let hours: number | string = dateNow.getHours();
@@ -26,28 +25,23 @@ function App() {
 
       setTimeToDisplay(`${hours}:${minutes}:${seconds}`);
     }
-    displayTimeNow();
-    setInterval(displayTimeNow, 1000);
+    currentTime();
+    setInterval(currentTime, 1000);
 
-
-    /* Display quote */
+    /* Fetch and set quote as string */
     async function fetchQuote() {
       try {
-        //GET https://api.quotable.io/quotes - check how many quotes there are.
-        const res = await fetch("https://zenquotes.io/api/random");
-        const data = await res.json();
-        console.dir(data)
-        setAuthor(data);
-        //setAuthor(data.author);
-        //setQuote(data.content);
+        const res = await fetch("https://quoteslate.vercel.app/api/quotes/random");
+        return await res.json();
       } catch (error) {
         console.log(error)
       }
     }
+    fetchQuote().then(data => {
+      setAuthor(data.author);
+      setQuote(data.quote);
+    });
 
-    setTimeout(()=>{
-      fetchQuote();
-    }, 1000)
   }, []);
 
   return (
