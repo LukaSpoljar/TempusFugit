@@ -2,6 +2,7 @@
   "short_name": "",
   "name": "Tempus Fugit",
   "author": "Ivan Luka Špoljar",
+  "description": "Bit by bit.",
   "icons": [
     {
       "src": "favicon.ico",
