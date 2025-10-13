@@ -61,6 +61,7 @@ function App() {
     <div id='app-wrapper'>
       <div id='time-wrapper'>
         <p id='time' className='glow-text'>{timeToDisplay}</p>
+        <br></br>
         <Button variant="contained" size="large" onClick={(event: any) => fetchQuote().then(data => saveQuote(data))}>
           <strong>Next quote</strong>
         </Button>
