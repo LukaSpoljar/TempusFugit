@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/TempusFugit/static/css/main.96abc430.css",
-    "main.js": "/TempusFugit/static/js/main.15b6ac78.js",
+    "main.js": "/TempusFugit/static/js/main.4c14aba5.js",
     "index.html": "/TempusFugit/index.html",
     "main.96abc430.css.map": "/TempusFugit/static/css/main.96abc430.css.map",
-    "main.15b6ac78.js.map": "/TempusFugit/static/js/main.15b6ac78.js.map"
+    "main.4c14aba5.js.map": "/TempusFugit/static/js/main.4c14aba5.js.map"
   },
   "entrypoints": [
     "static/css/main.96abc430.css",
-    "static/js/main.15b6ac78.js"
+    "static/js/main.4c14aba5.js"
   ]
 }
