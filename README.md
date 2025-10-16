@@ -1,3 +1,6 @@
+
+<img width="3471" height="1679" alt="project_tempus_fugit" src="https://github.com/user-attachments/assets/ef1e5e7c-09bb-4293-a52b-355c894931d4" />
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
